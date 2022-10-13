@@ -219,7 +219,7 @@ export default ({
 };
 
 /* This function is only there for demo purposes. It populates placeholder cards */
-const getRandomCards = () => {
+/* const getRandomCards = () => {
   const cards = [
     {
       imageSrc:
@@ -298,3 +298,4 @@ const getRandomCards = () => {
   // Shuffle array
   return cards.sort(() => Math.random() - 0.5);
 };
+*/
