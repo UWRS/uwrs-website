@@ -78,7 +78,7 @@ export default ({
   const cards = [
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1563461660947-507ef49e9c47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80",
+        "https://unibots.uk/images/unibots.png",
       company: "Unibots UK 22",
       type: "Competition",
       title: "Technical overview of our Bronze-Winning autonomous rover",
@@ -88,7 +88,7 @@ export default ({
     },
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1573165231977-3f0e27806045?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80",
+        "http://www.homepages.ed.ac.uk/shs/Climatechange/Flettner%20ship/AlbedoYacht_2012_r1.jpg",
       company: "Project Catamaran",
       type: "Hobby",
       title: "Exploring Flettner-Thom rotor-sails for efficient maritime transport",
