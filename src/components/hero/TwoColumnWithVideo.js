@@ -1,0 +1,138 @@
+import React, { useState } from "react";
+import styled from "styled-components";
+import tw from "twin.macro";
+//eslint-disable-next-line
+import { css } from "styled-components/macro";
+
+
+import ReactModalAdapter from "../../helpers/ReactModalAdapter.js";
+// import ResponsiveVideoEmbed from "../../helpers/ResponsiveVideoEmbed.js";
+
+import { ReactComponent as PlayIcon } from "feather-icons/dist/icons/user-plus.svg";
+import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
+import { ReactComponent as SvgDecoratorBlob1 } from "../../images/svg-decorator-blob-1.svg";
+import { ReactComponent as SvgDecoratorBlob2 } from "../../images/dot-pattern.svg";
+import RobotAccessible from "../../images/coverart/robot2-5.png";
+
+import { components } from "ComponentRenderer.js";
+
+
+const Container = tw.div`relative`;
+const TwoColumn = tw.div`flex flex-col lg:flex-row md:items-center max-w-screen-xl mx-auto py-20 md:py-24`;
+const LeftColumn = tw.div`relative lg:w-6/12 lg:pr-12 flex-shrink-0 text-center lg:text-left`;
+const RightColumn = tw.div`relative mt-12 lg:mt-0 flex flex-col justify-center`;
+
+const Heading = tw.h1`font-black text-3xl md:text-5xl leading-snug max-w-3xl`;
+const Paragraph = tw.p`my-5 lg:my-8 text-sm lg:text-base font-medium text-gray-600 max-w-lg mx-auto lg:mx-0`;
+
+const Actions = tw.div`flex flex-col items-center sm:flex-row justify-center lg:justify-start mt-8`;
+const WatchVideoButton = styled.button`
+  ${tw`mt-4 sm:mt-0 sm:ml-24 flex items-center text-secondary-300 transition duration-300 hocus:text-primary-400 focus:outline-none`}
+  .playIcon {
+    ${tw`stroke-1 w-12 h-12`}
+  }
+  .playText {
+    ${tw`ml-2 font-black`}
+  }
+`;
+
+
+const Link = tw.a`w-full sm:w-auto text-sm sm:text-base px-6 py-3 sm:px-8 sm:py-4 lg:px-10 lg:py-5 mt-4 first:mt-0 sm:mt-0 sm:mr-8 sm:last:mr-0 rounded font-bold border border-transparent tracking-wide transition duration-300 focus:outline-none focus:shadow-outline`;
+const PrimaryLink = tw(Link)`shadow text-gray-100 hocus:text-gray-300 bg-green-500 hocus:bg-green-700`;
+const SecondaryLink = tw(Link)`shadow text-gray-100 hocus:text-gray-300 bg-primary-500 hocus:bg-primary-700`;
+
+const IllustrationContainer = tw.div`flex justify-center md:justify-end items-center relative max-w-3xl lg:max-w-none`;
+
+// Random Decorator Blobs (shapes that you see in background)
+const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
+  ${tw`pointer-events-none opacity-5 absolute left-0 bottom-0 h-64 w-64 transform -translate-x-2/3  -z-10`}
+`;
+const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
+  ${tw`pointer-events-none fill-current text-primary-500 opacity-25 absolute w-32 h-32 right-0 bottom-0 transform translate-x-10 translate-y-10 -z-10`}
+`;
+
+const StyledModal = styled(ReactModalAdapter)`
+  &.mainHeroModal__overlay {
+    ${tw`fixed inset-0 z-50`}
+  }
+  &.mainHeroModal__content {
+    ${tw`xl:mx-auto m-4 sm:m-16 max-w-screen-xl absolute inset-0 flex justify-center items-center rounded-lg bg-gray-200 outline-none`}
+  }
+  .content {
+    ${tw`w-full lg:p-16`}
+  }
+`;
+const CloseModalButton = tw.button`absolute top-0 right-0 mt-8 mr-8 hocus:text-primary-500`;
+
+export default ({
+  heading = "Enabling Robotics For All Enthusiasts",
+  description="Activities are open to electronics, software & hardware hobbyists in and around Warwick. Of all ages, backgrounds & skillsets.",
+
+  watchVideoButtonText="Join Us",
+  primaryLinkText="Check Out What We Do",
+  primaryLinkUrl="/about",
+  secondaryLinkText="Follow Newest Updates On Linktree",
+  secondaryLinkUrl="https://linktr.ee/uwrs",
+  tertiaryLinkText="Watch Latest Project",
+  tertiaryLinkUrl="https://www.youtube.com/embed/HNL_Heun4Oo",
+  imageSrc=RobotAccessible,
+  imageCss=null,
+  imageDecoratorBlob = false,
+  landingPages = components.landingPages,
+  innerPages = components.innerPages,
+  blocks = components.blocks,
+}) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const toggleModal = () => setModalIsOpen(!modalIsOpen);
+
+                // <PrimaryLink href={linkUrlvideo} />
+
+
+  return (
+    <>
+      <Container>
+        <TwoColumn>
+          <LeftColumn>
+            <Heading>{heading}</Heading>
+            <Paragraph>{description}</Paragraph>
+            <Actions>
+              <WatchVideoButton onClick={toggleModal}>
+                <span className="playIconContainer">
+                  <PlayIcon className="playIcon" />
+                </span>
+                <span className="playText">{watchVideoButtonText}</span>
+              </WatchVideoButton>
+            </Actions>
+          </LeftColumn>
+          <RightColumn>
+            <IllustrationContainer>
+              <img
+                css={imageCss}
+                src={imageSrc}
+                alt="Hero"
+              />
+              {imageDecoratorBlob && <DecoratorBlob2 />}
+            </IllustrationContainer>
+          </RightColumn>
+        </TwoColumn>
+        <DecoratorBlob1 />
+        <StyledModal
+          closeTimeoutMS={300}
+          className="mainHeroModal"
+          isOpen={modalIsOpen}
+          onRequestClose={toggleModal}
+          shouldCloseOnOverlayClick={true}
+        >
+          <CloseModalButton onClick={toggleModal}>
+            <CloseIcon tw="w-6 h-6" />
+          </CloseModalButton>
+          <div className="content">
+            <PrimaryLink href={primaryLinkUrl}>{primaryLinkText}</PrimaryLink>
+            <SecondaryLink href={secondaryLinkUrl}>{secondaryLinkText}</SecondaryLink>
+          </div>
+        </StyledModal>
+      </Container>
+    </>
+  );
+};
