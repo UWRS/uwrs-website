@@ -70,7 +70,7 @@ export default ({
   ),
   description = "",
   linkText = "View all Activities",
-  linkUrl = "/projects",
+  linkUrl = "/404",
   cardLinkText = "Read Case Study",
   textOnLeft = false,
   roundedHeaderButton = false,
