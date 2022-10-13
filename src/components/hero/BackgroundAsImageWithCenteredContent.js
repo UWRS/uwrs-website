@@ -47,7 +47,7 @@ const Heading2 = styled.h1`
 `;
 
 
-export default ({ roundedHeaderButton = false, logoLink, links, className, collapseBreakpointClass = "lg", bg = "https://www.design-warwick.com/dal/wp-content/uploads/2021/12/fab.png" }) => {
+export default ({ roundedHeaderButton = false, logoLink, links, className, collapseBreakpointClass = "lg" }) => {
   const navLinks = [
     <NavLinks key={1}>
     <NavLink href="/about">About</NavLink>
@@ -67,15 +67,15 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
       <HeroContainer>
         <StyledHeader links={navLinks} />
         <Content>
-          <Heading>
-              University of
-              <br />
-              Warwick
-          <Heading2>
-              Robotics
-          </Heading2>
-              Society
-          </Heading>
+            <Heading>
+                University of
+                <br />
+                Warwick
+            <Heading2>
+                Robotics
+            </Heading2>
+                Society
+            </Heading>
         </Content>
       </HeroContainer>
     </Container>

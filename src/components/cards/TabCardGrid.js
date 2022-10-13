@@ -6,9 +6,11 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
 import { SectionHeading } from "components/misc/Headings.js";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
-import { ReactComponent as StarIcon } from "images/star-icon.svg";
 import { ReactComponent as SvgDecoratorBlob1 } from "images/svg-decorator-blob-5.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "images/svg-decorator-blob-7.svg";
+import BackgroundImage from "images/warwickfab.png";
+
+
 
 const HeaderRow = tw.div`flex justify-between items-center flex-col xl:flex-row`;
 const Header = tw(SectionHeading)``;
@@ -30,26 +32,24 @@ const CardImageContainer = styled.div`
   ${props => css`background-image: url("${props.imageSrc}");`}
   ${tw`h-56 xl:h-64 bg-center bg-cover relative rounded-t`}
 `;
-const CardRatingContainer = tw.div`leading-none absolute inline-flex bg-gray-100 bottom-0 left-0 ml-4 mb-4 rounded-full px-5 py-2 items-end`;
-const CardRating = styled.div`
+const CardDifficultyContainer = tw.div`leading-none absolute inline-flex bg-gray-100 bottom-0 left-0 ml-4 mb-4 rounded-full px-5 py-2 items-end`;
+const CardDifficulty = tw.div`font-medium text-xs text-gray-600`;
+const CardDate = styled.div`
   ${tw`mr-1 text-sm font-bold flex items-end`}
   svg {
     ${tw`w-4 h-4 fill-current text-orange-400 mr-1`}
   }
 `;
+const CardText = tw.div`p-4 text-gray-900`;
+const CardTitle = tw.h5`text-lg font-semibold group-hover:text-primary-500`;
+const Cardtag = tw.p`mt-1 text-sm font-medium text-gray-600`;
+const CardNote = tw.p`mt-4 text-xl font-bold`;  //Removed short description section for aesthethical homogeneity
 
 const CardHoverOverlay = styled(motion.div)`
   background-color: rgba(255, 255, 255, 0.5);
   ${tw`absolute inset-0 flex justify-center items-center`}
 `;
 const CardButton = tw(PrimaryButtonBase)`text-sm`;
-
-const CardReview = tw.div`font-medium text-xs text-gray-600`;
-
-const CardText = tw.div`p-4 text-gray-900`;
-const CardTitle = tw.h5`text-lg font-semibold group-hover:text-primary-500`;
-const Cardtag = tw.p`mt-1 text-sm font-medium text-gray-600`;
-const CardPrice = tw.p`mt-4 text-xl font-bold`;
 
 const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
   ${tw`pointer-events-none -z-20 absolute right-0 top-0 h-64 w-64 opacity-15 transform translate-x-2/3 -translate-y-12 text-pink-400`}
@@ -64,87 +64,74 @@ export default ({
     Current: [
       {
         imageSrc:
-          "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Unibots UK 23",
-        tag: "Tomato Salad & Carrot",
-        price: "$5.99",
-        rating: "5.0",
-        reviews: "87",
-        url: "#"
+          "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327??ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+        title: "Robotic Arm",
+        tag: "Partnership with WAI",
+        date: "Oct 2022 - Feb 2023",
+        difficulty: "⠀⚝⚝",
+        url: "/projects/robotarm"
       },
       {
         imageSrc:
           "https://images.unsplash.com/photo-1432139555190-58524dae6a55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Macaroni",
-        tag: "Cheese Pizza",
-        price: "$2.99",
-        rating: "4.8",
-        reviews: "32",
-        url: "#"
+        title: "Unibots UK 23",
+        tag: "Competition",
+        date: "Nov 2022 - Mar 2023",
+        difficulty: "⠀⚝⚝⚝",
+        url: "/projects/unibotsuk23"
       },
-      {
-        imageSrc:
-          "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327??ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Nelli",
-        tag: "Hamburger & Fries",
-        price: "$7.99",
-        rating: "4.9",
-        reviews: "89",
-        url: "#"
-      },
-      {
-        imageSrc:
-          "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Jalapeno Poppers",
-        tag: "Crispy Soyabeans",
-        price: "$8.99",
-        rating: "4.6",
-        reviews: "12",
-        url: "#"
-      },
-      {
-        imageSrc:
-          "https://images.unsplash.com/photo-1473093226795-af9932fe5856?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Cajun Chicken",
-        tag: "Roasted Chicken & Egg",
-        price: "$7.99",
-        rating: "4.2",
-        reviews: "19",
-        url: "#"
-      },
-      {
-        imageSrc:
-          "https://images.unsplash.com/photo-1550461716-dbf266b2a8a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Chillie Cake",
-        tag: "Deepfried Chicken",
-        price: "$2.99",
-        rating: "5.0",
-        reviews: "61",
-        url: "#"
-      },
-      {
-        imageSrc:
-          "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Guacamole Mex",
-        tag: "Mexican Chilli",
-        price: "$3.99",
-        rating: "4.2",
-        reviews: "95",
-        url: "#"
-      },
-      {
-        imageSrc:
-          "https://images.unsplash.com/photo-1565310022184-f23a884f29da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Carnet Nachos",
-        tag: "Chilli Crispy Nachos",
-        price: "$3.99",
-        rating: "3.9",
-        reviews: "26",
-        url: "#"
-      }
     ],
-    Archived: getRandomCards(),
-    Upcoming: getRandomCards(),
+
+    Archive: [
+      {
+        imageSrc:
+          BackgroundImage,
+        title: "Unibots UK 22",
+        tag: "Competition",
+        date: "Dec 2021 - Mar 2022",
+        difficulty: "⠀⚝⚝⚝",
+        url: "projects/unibotsuk22"
+      },
+      {
+        imageSrc:
+          "https://images.unsplash.com/photo-1432139555190-58524dae6a55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+        title: "SwarmHack 22",
+        tag: "Competition",
+        date: "May 2022",
+        difficulty: "⠀⚝",
+        url: "projects/swarmhack22"
+      },
+      {
+        imageSrc:
+          BackgroundImage,
+        title: "Nybble Cat",
+        tag: "Collaboration with WAI",
+        date: "Jan 2022 - Nov 2022",
+        difficulty: "⠀⚝⚝⚝",
+        url: "projects/nybble"
+      },
+    ],
+
+    Graveyard: [
+      {
+        imageSrc:
+          "https://images.unsplash.com/photo-1432139555190-58524dae6a55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+        title: "MATE ROV 2022",
+        tag: "Competition",
+        date: "Feb 2022 - June 2022",
+        difficulty: "⠀⚝⚝⚝⚝⚝",
+        url: "projects/materov22"
+      },
+      {
+        imageSrc:
+          BackgroundImage,
+        title: "Project Catamaran",
+        tag: "Collaboration with Altabition",
+        date: "July 2022 - Sep 2022",
+        difficulty: "⠀⚝⚝",
+        url: "projects/catamaranrc"
+      },
+    ]
   }
 }) => {
   /*
@@ -192,13 +179,12 @@ export default ({
               <CardContainer key={index}>
                 <Card className="group" href={card.url} initial="rest" whileHover="hover" animate="rest">
                   <CardImageContainer imageSrc={card.imageSrc}>
-                    <CardRatingContainer>
-                      <CardRating>
-                        <StarIcon />
-                        {card.rating}
-                      </CardRating>
-                      <CardReview>({card.reviews})</CardReview>
-                    </CardRatingContainer>
+                    <CardDifficultyContainer>
+                      <CardDate>
+                        {card.date}
+                      </CardDate>
+                      <CardDifficulty>{card.difficulty}</CardDifficulty>
+                    </CardDifficultyContainer>
                     <CardHoverOverlay
                       variants={{
                         hover: {
@@ -218,7 +204,7 @@ export default ({
                   <CardText>
                     <CardTitle>{card.title}</CardTitle>
                     <Cardtag>{card.tag}</Cardtag>
-                    <CardPrice>{card.price}</CardPrice>
+                    <CardNote>{card.note}</CardNote>
                   </CardText>
                 </Card>
               </CardContainer>
@@ -240,9 +226,8 @@ const getRandomCards = () => {
         "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       title: "Chicken Chilled",
       tag: "Chicken Main Course",
-      price: "$5.99",
-      rating: "5.0",
-      reviews: "87",
+      date: "5.0",
+      difficulty: "87",
       url: "#"
     },
     {
@@ -250,9 +235,8 @@ const getRandomCards = () => {
         "https://images.unsplash.com/photo-1582254465498-6bc70419b607?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       title: "Samsa Beef",
       tag: "Fried Mexican Beef",
-      price: "$3.99",
-      rating: "4.5",
-      reviews: "34",
+      date: "4.5",
+      difficulty: "34",
       url: "#"
     },
     {
@@ -260,9 +244,8 @@ const getRandomCards = () => {
         "https://images.unsplash.com/photo-1565310022184-f23a884f29da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       title: "Carnet Nachos",
       tag: "Chilli Crispy Nachos",
-      price: "$3.99",
-      rating: "3.9",
-      reviews: "26",
+      date: "3.9",
+      difficulty: "26",
       url: "#"
     },
     {
@@ -270,9 +253,8 @@ const getRandomCards = () => {
         "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       title: "Guacamole Mex",
       tag: "Mexican Chilli",
-      price: "$3.99",
-      rating: "4.2",
-      reviews: "95",
+      date: "4.2",
+      difficulty: "95",
       url: "#"
     },
     {
@@ -280,9 +262,8 @@ const getRandomCards = () => {
         "https://images.unsplash.com/photo-1550461716-dbf266b2a8a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       title: "Chillie Cake",
       tag: "Deepfried Chicken",
-      price: "$2.99",
-      rating: "5.0",
-      reviews: "61",
+      date: "5.0",
+      difficulty: "61",
       url: "#"
     },
     {
@@ -290,9 +271,8 @@ const getRandomCards = () => {
         "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327??ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       title: "Nelli",
       tag: "Hamburger & Fries",
-      price: "$7.99",
-      rating: "4.9",
-      reviews: "89",
+      date: "4.9",
+      difficulty: "89",
       url: "#"
     },
     {
@@ -300,9 +280,8 @@ const getRandomCards = () => {
         "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       title: "Jalapeno Poppers",
       tag: "Crispy Soyabeans",
-      price: "$8.99",
-      rating: "4.6",
-      reviews: "12",
+      date: "4.6",
+      difficulty: "12",
       url: "#"
     },
     {
@@ -310,9 +289,8 @@ const getRandomCards = () => {
         "https://images.unsplash.com/photo-1473093226795-af9932fe5856?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       title: "Cajun Chicken",
       tag: "Roasted Chicken & Egg",
-      price: "$7.99",
-      rating: "4.2",
-      reviews: "19",
+      date: "4.2",
+      difficulty: "19",
       url: "#"
     }
   ];

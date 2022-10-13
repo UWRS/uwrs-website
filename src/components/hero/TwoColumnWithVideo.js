@@ -40,6 +40,8 @@ const WatchVideoButton = styled.button`
 const Link = tw.a`w-full sm:w-auto text-sm sm:text-base px-6 py-3 sm:px-8 sm:py-4 lg:px-10 lg:py-5 mt-4 first:mt-0 sm:mt-0 sm:mr-8 sm:last:mr-0 rounded font-bold border border-transparent tracking-wide transition duration-300 focus:outline-none focus:shadow-outline`;
 const PrimaryLink = tw(Link)`shadow text-gray-100 hocus:text-gray-300 bg-green-500 hocus:bg-green-700`;
 const SecondaryLink = tw(Link)`shadow text-gray-100 hocus:text-gray-300 bg-primary-500 hocus:bg-primary-700`;
+const EmptyLink = tw(Link)`xl:mx-auto m-4 sm:m-16 bg-gray-200 outline-none`;
+
 
 const IllustrationContainer = tw.div`flex justify-center md:justify-end items-center relative max-w-3xl lg:max-w-none`;
 
@@ -64,17 +66,17 @@ const StyledModal = styled(ReactModalAdapter)`
 `;
 const CloseModalButton = tw.button`absolute top-0 right-0 mt-8 mr-8 hocus:text-primary-500`;
 
+
 export default ({
   heading = "Enabling Robotics For All Enthusiasts",
   description="Activities are open to electronics, software & hardware hobbyists in and around Warwick. Of all ages, backgrounds & skillsets.",
 
   watchVideoButtonText="Join Us",
   primaryLinkText="Check Out What We Do",
-  primaryLinkUrl="/about",
-  secondaryLinkText="Follow Newest Updates On Linktree",
+  primaryLinkUrl="/projects",
+  secondaryLinkText="Follow Newest Updates",
   secondaryLinkUrl="https://linktr.ee/uwrs",
-  tertiaryLinkText="Watch Latest Project",
-  tertiaryLinkUrl="https://www.youtube.com/embed/HNL_Heun4Oo",
+  emptyLinkUrl="https://discord.com/invite/hq2HWpZAQD",
   imageSrc=RobotAccessible,
   imageCss=null,
   imageDecoratorBlob = false,
@@ -85,9 +87,6 @@ export default ({
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const toggleModal = () => setModalIsOpen(!modalIsOpen);
-
-                // <PrimaryLink href={linkUrlvideo} />
-
 
   return (
     <>
@@ -129,6 +128,7 @@ export default ({
           </CloseModalButton>
           <div className="content">
             <PrimaryLink href={primaryLinkUrl}>{primaryLinkText}</PrimaryLink>
+            <EmptyLink href={emptyLinkUrl}>⠀⠀</EmptyLink>
             <SecondaryLink href={secondaryLinkUrl}>{secondaryLinkText}</SecondaryLink>
           </div>
         </StyledModal>

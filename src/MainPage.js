@@ -5,14 +5,10 @@ import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 
 import Hero from "components/hero/BackgroundAsImageWithCenteredContent.js";
 
-import MainFeature1 from "components/hero/TwoColumnWithVideo.js";
 import MainFeature2 from "components/features/TwoColWithTwoFeaturesAndButtons.js";
 import Portfolio from "components/cards/PortfolioTwoCardsWithImage.js";
-// import Blog from "components/blogs/ThreeColSimpleWithImageAndDashedBorder.js";
-// import Testimonial from "components/testimonials/TwoColumnWithImageAndProfilePictureReview.js";
-// import FAQ from "components/faqs/SimpleWithSideImage.js";
-// import CTA from "components/cta/GetStartedLight.js";
 import Footer from "components/footers/SimpleFiveColumn.js";
+import MainFeature1 from "components/hero/TwoColumnWithVideo.js";
 import NewsLetter from "components/forms/SimpleSubscribeNewsletter.js";
 // import customerSupportIllustrationSrc from "images/customer-support-illustration.svg";
 

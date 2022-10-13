@@ -110,7 +110,7 @@ import ProjectIndex from ".//pages/ProjectIndex.js";
 import PrivacyPolicy from ".//pages/PrivacyPolicy.js";
 import Signup from ".//pages/Signup.js";
 import Sponsor from ".//pages/Sponsor.js";
-import PageNotFound from ".//components/cta/404.js";
+import PageNotFound from ".//pages/404.js";
 
 
 
