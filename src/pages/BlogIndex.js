@@ -5,9 +5,18 @@ import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro";
 import Header from "components/headers/headerpurple.js";
-import Footer from "components/footers/FiveColumnWithInputForm.js";
+import Footer from "components/footers/SimpleFiveColumn.js";
 import { SectionHeading } from "components/misc/Headings";
 import { PrimaryButton } from "components/misc/Buttons";
+
+// Background images for blog posts
+import BackgroundImageSwarmApplications2 from "images/nanobots.jpg";
+import BackgroundImageSwarmApplications1 from "images/birdSwarm.jpg";
+import BackgroundImageUnderwaterComm from "images/underwaterComm.jpg";
+import BackgroundImageSwarmHack22 from "images/swarmhack22.jpg";
+import BackgroundImageUnibotsUK22 from "images/unibotsuk22CV.png";
+
+
 
 const HeadingRow = tw.div`flex`;
 const Heading = tw(SectionHeading)`text-gray-900`;
@@ -49,35 +58,11 @@ const LoadMoreButton = tw(PrimaryButton)`mt-16 mx-auto`;
 export default ({
   headingText = "Blog Posts",
   posts = [
-    {
-      imageSrc:
-        "https://images.unsplash.com/photo-1499678329028-101435549a4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1024&q=80",
-      category: "Travel Tips",
-      date: "April 21, 2020",
-      title: "Safely Travel in Foreign Countries",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      url: "https://timerse.com",
-      featured: true
-    },
-    getPlaceholderPost(),
-    getPlaceholderPost(),
-    getPlaceholderPost(),
-    getPlaceholderPost(),
-    getPlaceholderPost(),
-    getPlaceholderPost(),
-    getPlaceholderPost(),
-    getPlaceholderPost(),
-    getPlaceholderPost(),
-    getPlaceholderPost(),
-    getPlaceholderPost(),
-    getPlaceholderPost(),
-    getPlaceholderPost(),
-    getPlaceholderPost(),
-    getPlaceholderPost(),
-    getPlaceholderPost(),
-    getPlaceholderPost(),
-    getPlaceholderPost()
+    researchUnderwaterComm(),
+    researchSwarmApplications2(),
+    competitionSwarmHackSignUp(),
+    researchSwarmApplications1(),
+    competitionUnibotsUKSignUp()
   ]
 }) => {
   const [visible, setVisible] = useState(7);
@@ -119,13 +104,59 @@ export default ({
   );
 };
 
-const getPlaceholderPost = () => ({
-  imageSrc:
-    "https://images.unsplash.com/photo-1418854982207-12f710b74003?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1024&q=80",
-  category: "Travel Guide",
-  date: "April 19, 2020",
-  title: "Visit the beautiful Alps in Switzerland",
+
+// Blog posts listed in reverse-chronological order:
+
+const researchUnderwaterComm = () => ({
+  imageSrc: BackgroundImageUnderwaterComm,
+  category: "Research",
+  date: "Aug 27, 2022",
+  title: "Underwater Communication Techniques",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  url: "https://reddit.com"
+    "Exploring various methods of communication between landside and underwater devices.",
+  url: "/blog/underwatercomm",
+  featured: true
+});
+
+const researchSwarmApplications2 = () => ({
+  imageSrc: BackgroundImageSwarmApplications2,
+  category: "Research",
+  date: "Jul 05, 2022",
+  title: "Real World Swarm Applications: Part II",
+  description:
+    "Overview of novel, useful and creative applications of robotic swarms grounded (or flown!) in the real world.",
+  url: "/blog/swarms2",
+  featured: false
+});
+
+const competitionSwarmHackSignUp = () => ({
+  imageSrc: BackgroundImageSwarmHack22,
+  category: "Competition",
+  date: "Apr 29, 2022",
+  title: "SwarmHack '22 Poppin' This June",
+  description:
+    "Recruiting UWRS roboticists for SwarmHack entry.",
+  url: "/blog/swarmhack22"
+});
+// https://www.cs.york.ac.uk/news-events/events/2022/swarm-hack-2022/
+
+const researchSwarmApplications1 = () => ({
+  imageSrc: BackgroundImageSwarmApplications1,
+  category: "Research",
+  date: "Mar 31, 2022",
+  title: "Real World Swarm Applications: Part I",
+  description:
+    "Overview of novel, useful and creative applications of robotic swarms grounded (or flown!) in the real world.",
+  url: "/blog/swarms1",
+  featured: false
+});
+
+const competitionUnibotsUKSignUp = () => ({
+  imageSrc: BackgroundImageUnibotsUK22,
+  category: "Competition",
+  date: "Feb 19, 2022",
+  title: "Unibots UK - UWRS x WAI Sign Up",
+  description:
+    "We are looking for 2 computer vision specialists to join our competition team!",
+  url: "/blog/unibotsuk22team"
 });

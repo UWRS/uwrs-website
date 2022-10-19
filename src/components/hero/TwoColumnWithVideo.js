@@ -68,7 +68,11 @@ const CloseModalButton = tw.button`absolute top-0 right-0 mt-8 mr-8 hocus:text-p
 
 
 export default ({
-  heading = "Enabling Robotics For All Enthusiasts",
+  heading = (
+    <>
+      <span tw="text-primary-400">Enabling</span> Robotics For All <span tw="text-primary-600">Enthusiasts</span>.
+    </>
+  ),
   description="Activities are open to electronics, software & hardware hobbyists in and around Warwick. Of all ages, backgrounds & skillsets.",
 
   watchVideoButtonText="Join Us",
