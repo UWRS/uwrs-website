@@ -82,7 +82,7 @@ export default (primaryButtonUrl = "https://linktr.ee/uwrs") => {
           <ColumnHeading>Quick Links</ColumnHeading>
           <LinkList>
             <LinkListItem>
-              <Link href="/404">Blog</Link>
+              <Link href="/blog">Blog</Link>
             </LinkListItem>
             <LinkListItem>
               <Link href="/404">Editorial</Link>

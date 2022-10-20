@@ -14,6 +14,7 @@ import BackgroundImageSwarmApplications2 from "images/nanobots.jpg";
 import BackgroundImageSwarmApplications1 from "images/birdSwarm.jpg";
 import BackgroundImageUnderwaterComm from "images/underwaterComm.jpg";
 import BackgroundImageSwarmHack22 from "images/swarmhack22.jpg";
+import BackgroundImageUKRAS from "images/ukras.png";
 import BackgroundImageUnibotsUK22 from "images/unibotsuk22CV.png";
 
 
@@ -60,6 +61,7 @@ export default ({
   posts = [
     researchUnderwaterComm(),
     researchSwarmApplications2(),
+    eventUKRAS(),
     competitionSwarmHackSignUp(),
     researchSwarmApplications1(),
     competitionUnibotsUKSignUp()
@@ -110,7 +112,7 @@ export default ({
 const researchUnderwaterComm = () => ({
   imageSrc: BackgroundImageUnderwaterComm,
   category: "Research",
-  date: "Aug 27, 2022",
+  date: "Aug 26, 2022",
   title: "Underwater Communication Techniques",
   description:
     "Exploring various methods of communication between landside and underwater devices.",
@@ -129,16 +131,26 @@ const researchSwarmApplications2 = () => ({
   featured: false
 });
 
+const eventUKRAS = () => ({
+  imageSrc: BackgroundImageUKRAS,
+  category: "Event",
+  date: "May 06, 2022",
+  title: "EPSRC UK-RAS Network Events For Everyone",
+  description:
+    "Exciting events coming up on EPSRC UK-Robotics and Autonomous Systems Network homepage!",
+  url: "/blog/ukras",
+  featured: false
+});
+
 const competitionSwarmHackSignUp = () => ({
   imageSrc: BackgroundImageSwarmHack22,
   category: "Competition",
-  date: "Apr 29, 2022",
+  date: "Apr 30, 2022",
   title: "SwarmHack '22 Poppin' This June",
   description:
     "Recruiting UWRS roboticists for SwarmHack entry.",
   url: "/blog/swarmhack22"
 });
-// https://www.cs.york.ac.uk/news-events/events/2022/swarm-hack-2022/
 
 const researchSwarmApplications1 = () => ({
   imageSrc: BackgroundImageSwarmApplications1,

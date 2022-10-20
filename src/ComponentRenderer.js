@@ -5,7 +5,8 @@ import AnimationRevealPage from "helpers/AnimationRevealPage.js"
 import BlogSwarmHack22 from "blogPosts/SwarmHack22.js";
 import BlogSwarmApplications1 from "blogPosts/SwarmApplications1.js";
 import BlogSwarmApplications2 from "blogPosts/SwarmApplications2.js";
-
+import BlogUKRASNetwork from "blogPosts/UKRASNetwork.js";
+import BlogUnibotsUK22Team from "blogPosts/UnibotsUK22Team.js";
 
 
 export const components = {
@@ -21,6 +22,14 @@ export const components = {
     swarms2: {
       component: BlogSwarmApplications2,
       url: "/blog/swarms2",
+    },
+    ukras: {
+      component: BlogUKRASNetwork,
+      url: "/blog/ukras",
+    },
+    unibotsuk22team: {
+      component: BlogUnibotsUK22Team,
+      url: "/blog/unibotsuk22team",
     },
   },
 

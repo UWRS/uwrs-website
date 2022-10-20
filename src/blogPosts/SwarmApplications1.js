@@ -25,19 +25,19 @@ const Text = styled.div`
     ${tw`mt-2 leading-loose m-24`}
   }
   h1 {
-    ${tw`text-3xl font-bold mt-10 m-24`}
+    ${tw`text-3xl text-primary-600 font-bold mt-10 m-24`}
   }
   h2 {
-    ${tw`text-2xl font-bold mt-8 m-24`}
+    ${tw`text-2xl text-primary-400 font-bold mt-8 m-24`}
   }
   h3 {
-    ${tw`text-xl font-bold mt-8 m-24`}
+    ${tw`text-xl text-primary-400 font-bold mt-8 m-24`}
   }
   h4 {
-    ${tw`text-lg font-bold mt-8 m-24`}
+    ${tw`text-lg text-primary-300 font-bold mt-8 m-24`}
   }
   h5 {
-    ${tw`text-sm font-bold mt-6 m-24`}
+    ${tw`text-sm text-primary-300 font-bold mt-6 m-24`}
   }
   ul {
     ${tw`list-disc list-inside`}
@@ -48,7 +48,14 @@ const Text = styled.div`
       }
     }
   }
+  a {
+    ${tw`text-primary-300`}
+  }
+  time {
+    ${tw`text-end text-primary-700 font-thin`}
+  }
 `;
+
 export default ({ headingText = "Robotic Swarm Applications: Part I" }) => {
   return (
     <AnimationRevealPage>
@@ -60,6 +67,7 @@ export default ({ headingText = "Robotic Swarm Applications: Part I" }) => {
           </HeadingRow>
 
           <Text>
+          <time>Mar 31, 2022</time>
             <h1>Welcome To Our Swarm Series 👋</h1>
               <p>
                   This page marks the first of many articles surrounding the wonderful world of
