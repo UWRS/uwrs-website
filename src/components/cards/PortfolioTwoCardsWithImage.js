@@ -84,7 +84,7 @@ export default ({
       title: "Technical overview of our Bronze-Winning autonomous rover",
       durationText: "5 Minute Read",
       locationText: "Cambridge",
-      linkUrl: "/projects/unibotsuk22"
+      linkUrl: "/404"
     },
     {
       imageSrc:
@@ -94,7 +94,7 @@ export default ({
       title: "Exploring Flettner-Thom rotor-sails for efficient maritime transport",
       durationText: "3 Minute Read",
       locationText: "Leamington Spa",
-      linkUrl: "/projects/catamaran"
+      linkUrl: "/404"
     }
   ];
   return (

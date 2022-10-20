@@ -8,6 +8,8 @@ import {SectionDescription} from "components/misc/Typography";
 import { ReactComponent as LinkedinIcon} from "images/linkedin-icon.svg";
 import { ReactComponent as GithubIcon } from "images/github-icon.svg";
 
+import Treasurer from "images/josh_fitzmaurice.jpg";
+
 const HeadingContainer = tw.div``
 const Heading = tw(SectionHeading)``
 const Subheading = tw(SubheadingBase)`text-center mb-3`
@@ -45,27 +47,23 @@ export default ({
   description = "Committee members are carefully vetted through interview on a rolling basis.",
   cards = [
     {
-      imageSrc: "https://www.thestudentpocketguide.com/wp-content/uploads/minseok-ryu-SPG.png",
+      imageSrc: "https://thumbs.dreamstime.com/b/default-avatar-profile-flat-icon-social-media-user-vector-portrait-unknown-human-image-default-avatar-profile-flat-icon-184330869.jpg",
       position: "President",
-      name: "Minseok Ryu",
+      name: "Yoel Kastro-Morlevi",
       links: [
         {
-          url: "https://www.linkedin.com/in/minseok-ryu-7651a41a5/",
-          icon: LinkedinIcon,
-        },
-        {
-          url: "https://github.com/euteryu",
+          url: "https://github.com/yoelkastro",
           icon: GithubIcon,
         },
       ],
     },
     {
-      imageSrc: "https://media-exp1.licdn.com/dms/image/C4D03AQEdyUCecVqScg/profile-displayphoto-shrink_400_400/0/1594499325231?e=1671062400&v=beta&t=LicWxaN14efdCMD_ZxTwMforOG4ranl5C0xHJJp9D9w",
+      imageSrc: Treasurer,
       position: "Treasurer",
       name: "Joshua Fitzmaurice",
       links: [
         {
-          url: "https://www.linkedin.com/in/nathan-telford-1b2681220/",
+          url: "https://www.linkedin.com/in/jfitz02",
           icon: LinkedinIcon,
         },
         {
@@ -87,18 +85,18 @@ export default ({
     },
     {
       imageSrc: "https://thumbs.dreamstime.com/b/default-avatar-profile-flat-icon-social-media-user-vector-portrait-unknown-human-image-default-avatar-profile-flat-icon-184330869.jpg",
-      position: "Social Officer",
-      name: "Yoel Kastro-Morlevi",
+      position: "Welfare Officer",
+      name: "Laura Harkins",
       links: [
         {
-          url: "https://github.com/yoelkastro",
-          icon: GithubIcon,
+          url: "",
+          icon: LinkedinIcon,
         },
       ],
     },
     {
       imageSrc: "https://thumbs.dreamstime.com/b/default-avatar-profile-flat-icon-social-media-user-vector-portrait-unknown-human-image-default-avatar-profile-flat-icon-184330869.jpg",
-      position: "Sr. Developer",
+      position: "King of Maths",
       name: "Robert Bush",
       links: [
         {
@@ -115,21 +113,6 @@ export default ({
         {
           url: "https://www.linkedin.com/in/natasha-galpayage-dona-a6c3/",
           icon: LinkedinIcon,
-        },
-      ],
-    },
-    {
-      imageSrc: "https://media-exp1.licdn.com/dms/image/C4E03AQHauCZ3ZEIKXA/profile-displayphoto-shrink_400_400/0/1646160097798?e=1671062400&v=beta&t=kh7vRpzG4ZXGqxow3kVc1n2NlV_-SjsE3xxwUEmhIpo",
-      position: "Sr. Designer",
-      name: "Theo Weeden",
-      links: [
-        {
-          url: "https://www.linkedin.com/in/theo-weeden/",
-          icon: LinkedinIcon,
-        },
-        {
-          url: "https://github.com/theoweeden",
-          icon: GithubIcon,
         },
       ],
     },
@@ -155,6 +138,21 @@ export default ({
         },
         {
           url: "https://github.com/arkamnite",
+          icon: GithubIcon,
+        },
+      ],
+    },
+    {
+      imageSrc: "https://www.thestudentpocketguide.com/wp-content/uploads/minseok-ryu-SPG.png",
+      position: "Webmaster",
+      name: "Minseok Ryu",
+      links: [
+        {
+          url: "https://www.linkedin.com/in/minseok-ryu-7651a41a5/",
+          icon: LinkedinIcon,
+        },
+        {
+          url: "https://github.com/euteryu",
           icon: GithubIcon,
         },
       ],

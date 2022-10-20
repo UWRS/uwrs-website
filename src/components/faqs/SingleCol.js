@@ -46,7 +46,7 @@ export default ({
     {
       question: "Do I have to be a student at the University of Warwick to join ?",
       answer:
-        "No - our activities are open to all enthusiasts of all backgrounds. However, there may be restrictions placed on certain workshops held within the School of Engineering premises; don't worry - we'll let you know well in advance!"
+        "Our activities are open to all enthusiasts of all backgrounds. However, there may be restrictions placed on certain workshops held within the School of Engineering premises; don't worry - we'll let you know well in advance!"
     },
     {
       question: "How often do you hold events | workshops | conferences etc. ?",

@@ -77,7 +77,7 @@ export default ({
 
   watchVideoButtonText="Join Us",
   primaryLinkText="Check Out What We Do",
-  primaryLinkUrl="/projects",
+  primaryLinkUrl="/404",
   secondaryLinkText="Follow Newest Updates",
   secondaryLinkUrl="https://linktr.ee/uwrs",
   emptyLinkUrl="https://discord.com/invite/hq2HWpZAQD",
