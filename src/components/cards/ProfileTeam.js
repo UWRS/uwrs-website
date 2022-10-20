@@ -84,12 +84,12 @@ export default ({
       ],
     },
     {
-      imageSrc: "https://thumbs.dreamstime.com/b/default-avatar-profile-flat-icon-social-media-user-vector-portrait-unknown-human-image-default-avatar-profile-flat-icon-184330869.jpg",
-      position: "Welfare Officer",
-      name: "Laura Harkins",
+      imageSrc: "https://media-exp1.licdn.com/dms/image/C4E03AQHauCZ3ZEIKXA/profile-displayphoto-shrink_400_400/0/1646160097798?e=1671667200&v=beta&t=4xO0y5bWYbeQ2J4QUncrQ9T6ceCPKLr_LJJV_KxaFSc",
+      position: "Logo Designer",
+      name: "Theo Weeden",
       links: [
         {
-          url: "",
+          url: "https://www.linkedin.com/in/theo-weeden/",
           icon: LinkedinIcon,
         },
       ],
